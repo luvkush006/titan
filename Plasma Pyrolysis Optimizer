@@ -1,0 +1,15 @@
+def calculate_h2_yield(waste_mass: float, temp: float) -> tuple:
+    """
+    Args:
+        waste_mass (kg): Input plastic waste
+        temp (°C): Plasma torch temperature
+        
+    Returns:
+        h2_yield (kg), energy_use (kWh)
+    """
+    h2_yield = waste_mass * 0.42  # 42% conversion efficiency
+    energy_use = (temp * 0.048) + 0.2  # Power curve from lab tests
+    return round(h2_yield, 2), round(energy_use, 2)
+
+# Example: Process 1.5kg plastic at 800°C
+print(calculate_h2_yield(1.5, 800))  # Output: (0.63 kg H₂, 38.6 kWh)
