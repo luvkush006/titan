@@ -1,0 +1,14 @@
+from sklearn.ensemble import RandomForestRegressor
+import numpy as np
+
+# Simulated training data (temp, pressure, runtime → remaining_life)
+X = np.array([[800, 1.2, 50], [750, 1.0, 120], [820, 1.3, 30]])
+y = np.array([85, 60, 90])  # Remaining lifespan (hours)
+
+model = RandomForestRegressor()
+model.fit(X, y)
+
+def predict_lifespan(temp, pressure, hours_used):
+    return model.predict([[temp, pressure, hours_used]])[0]
+
+print(f"Nozzle lifespan: {predict_lifespan(790, 1.1, 45):.0f} hours remaining")
