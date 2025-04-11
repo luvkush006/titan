@@ -1,0 +1,14 @@
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/system-status')
+def status():
+    return jsonify({
+        "h2_production": "0.63 kg/hr",
+        "efficiency": "92%",
+        "alerts": ["Filter 2 needs replacement"]
+    })
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
