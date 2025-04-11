@@ -1,0 +1,6 @@
+/titan-core
+├── /docs               # Technical whitepapers
+├── /firmware           # Raspberry Pi control code
+├── /simulations        # ANSYS/OpenMDAO files
+├── LICENSE             # MIT Open Source
+└── README.md           # Setup instructions
