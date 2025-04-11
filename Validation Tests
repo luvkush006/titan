@@ -1,0 +1,8 @@
+import unittest
+
+class TestH2Production(unittest.TestCase):
+    def test_yield_calculation(self):
+        self.assertEqual(calculate_h2_yield(1.0, 800)[0], 0.42)  # 42% yield
+        
+if __name__ == '__main__':
+    unittest.main()
